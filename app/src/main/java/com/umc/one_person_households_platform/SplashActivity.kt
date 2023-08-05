@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.umc.one_person_households_platform.R
 import com.umc.one_person_households_platform.view.login.LoginFirstActivity
 
 
