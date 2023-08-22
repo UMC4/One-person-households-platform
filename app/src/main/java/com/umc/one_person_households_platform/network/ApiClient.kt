@@ -9,6 +9,39 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 interface ApiClient {
+    //로그인
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @POST("/app/users/logIn")
+    suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
+
+
+    //전체 유저 정보 불러오기
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/users")
+    suspend fun getUsers(): Response<List<User>>
+
+    //회원가입
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @POST("/app/users")
+    suspend fun signupUser(@Body request: SignupRequest): Response<SignupResponse>
+
+    //이메일 인증
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @POST("/app/mail/Validation")
+    suspend fun sendValidationEmail(@Query("email") email: String): Response<ValidationResponse>
+
+    //비밀번호 찾기
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/users/setPwd?")
+    suspend fun resetPassword(
+        @Query("email") email: String,
+        @Query("password") password: String
+    ): Response<ResetPasswordResponse>
+
+    //아이디 찾기
+    @GET("/app/users/getId")
+    fun getUserId(@Query("email") email: String): Call<FindIdResponse>
+
 
     // 홈 화면 마감 임박 공구 출력
     @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
