@@ -52,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/iv_line">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mycomment"
             android:layout_width="402dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"

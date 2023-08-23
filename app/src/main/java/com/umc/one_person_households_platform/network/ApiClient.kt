@@ -43,6 +43,15 @@ interface ApiClient {
     fun getUserId(@Query("email") email: String): Call<FindIdResponse>
 
 
+
+    //닉네임 변경
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @PATCH("/app/users/setEmail")
+    suspend fun setEmail(
+        @Body email: Map<String, String>
+    ): Response<SetNicknameResponse>
+
+
     // 홈 화면 마감 임박 공구 출력
     @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
     @GET("app/home/grouppurchase")
@@ -169,6 +178,53 @@ interface ApiClient {
     @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
     @GET("/app/post/get")
     fun getRecipeDetail(@Query("postIdx") postId: Int): Call<RecipeDetail>
+
+    //마이페이지 닉네임 변경
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @PATCH("/app/users/setNickname")
+    suspend fun setNickname(@Query("nickname") nickname: String, nickname1: String): Response<SetNicknameResponse>
+
+    //마이페이지 글 작성 목록
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/mypage/community/posts")
+    suspend fun getUserCommunityPosts(
+        @Query("startIdx") startIdx: Int = 0,  // default 값 설정
+        @Query("size") size: Int = 10         // default 값 설정
+    ): Response<CommunityPostsResponse>
+
+    //마이페이지 댓글 작성 목록
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/mypage/community/comments")
+    suspend fun getUserCommunityComments(
+        @Query("startIdx") startIdx: Int = 0,
+        @Query("size") size: Int = 10
+    ): Response<CommunityCommentsResponse>
+
+    //마이페이지 관심표시 글 목록
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/mypage/community/likes")
+    suspend fun getUserCommunityLikes(
+        @Query("startIdx") startIdx: Int = 0,
+        @Query("size") size: Int = 10
+    ): Response<CommunityLikesResponse>
+
+    //마이페이지 공감
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/mypage/community/hearts")
+    suspend fun getCommunityHearts(
+        @Query("startIdx") startIdx: Int = 0,
+        @Query("size") size: Int = 10
+    ): Response<CommunityHeartsResponse>
+
+    //마이페이지 참여 공구
+    @Headers("X-ACCESS-TOKEN: ${BuildConfig.JWT_KEY}")
+    @GET("/app/mypage/grouppurchase/participated")
+    suspend fun getParticipatedGroupPurchase(
+        @Query("startIdx") startIdx: Int = 0,
+        @Query("size") size: Int = 10
+    ): Response<ParticipatedGroupPurchaseResponse>
+
+
 
     companion object {
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/mypageFragment">
+
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageFragment"
+        android:label="MypageFragment" />
+
+
+    <fragment
+        android:id="@+id/mypageAccountSettingFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageAccountSettingFragment"
+        android:label="MypageAccountSettingFragment" />
+
+    <fragment
+        android:id="@+id/mypageMyPostsFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageMyPostsFragment"
+        android:label="MypageMypostsFragment" />
+
+
+    <fragment
+        android:id="@+id/mypageCommentedPostsFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageCommentedPostsFragment"
+        android:label="MypageCommentedPostsFragment" />
+
+    <fragment
+        android:id="@+id/mypageLikedPostsFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageLikedPostsFragment"
+        android:label="MypageLikedPostsFragment" />
+    <fragment
+        android:id="@+id/mypageSavedPostsFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageSavedPostsFragment"
+        android:label="MypageSavedPostsFragment"/>
+    <fragment
+        android:id="@+id/mypagePostedGroupBuyingFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypagePostedGroupBuyingFragment"
+        android:label="MypagePostedGroupBuyingFragment"/>
+    <fragment
+        android:id="@+id/mypageJoinedGroupBuyingFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageJoinedGroupBuyingFragment"
+        android:label="MypageJoinedGroupBuyingFragment"/>
+    <fragment
+        android:id="@+id/mypageSavedGroupBuyingFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageSavedGroupBuyingFragment"
+        android:label="MypageSavedGroupBuyingFragment"/>
+
+    <fragment
+        android:id="@+id/mypageAlarmSettingFragment"
+        android:name="com.umc.one_person_households_platform.view.mypage.MypageAlarmSettingFragment"
+        android:label="MypageAlarmSettingFragment"/>
+
+
+</navigation>
