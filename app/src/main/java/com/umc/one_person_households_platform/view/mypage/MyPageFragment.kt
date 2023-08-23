@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.umc.one_person_households_platform.R
 import com.umc.one_person_households_platform.databinding.FragmentMyPageBinding
 
 class MypageFragment : Fragment() {
@@ -16,16 +18,57 @@ class MypageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // 데이터 바인딩 초기화
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // 뒤로가기 버튼 클릭 이벤트 설정
         binding.ivBack.setOnClickListener {
-            goBack() // 뒤로가기 기능을 수행하는 함수 호출
+            goBack()
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // NavController 초기화
+        val navController = findNavController()
+
+        binding.tvAccount.setOnClickListener {
+            navController.navigate(R.id.mypageAccountSettingFragment)
+        }
+
+        binding.tvMypost.setOnClickListener {
+            navController.navigate(R.id.mypageMyPostsFragment)
+        }
+
+        binding.tvMycomment.setOnClickListener {
+            navController.navigate(R.id.mypageCommentedPostsFragment)
+        }
+
+        binding.tvLikepost.setOnClickListener {
+            navController.navigate(R.id.mypageLikedPostsFragment)
+        }
+
+        binding.tvInterestpost.setOnClickListener {
+            navController.navigate(R.id.mypageSavedPostsFragment)
+        }
+
+        binding.tvPostedGroupBuying.setOnClickListener {
+            navController.navigate(R.id.mypagePostedGroupBuyingFragment)
+        }
+
+        binding.tvJoinedGroupBuying.setOnClickListener {
+            navController.navigate(R.id.mypageJoinedGroupBuyingFragment)
+        }
+
+        binding.tvSavedGroupBuying.setOnClickListener {
+            navController.navigate(R.id.mypageSavedGroupBuyingFragment)
+        }
+
+        binding.tvAlarmSetting.setOnClickListener {
+            navController.navigate(R.id.mypageAlarmSettingFragment)
+        }
     }
 
     // 뒤로가기 기능을 수행하는 함수
@@ -38,3 +81,4 @@ class MypageFragment : Fragment() {
         _binding = null
     }
 }
+

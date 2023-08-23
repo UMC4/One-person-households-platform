@@ -1,25 +1,22 @@
-package com.umc.one_person_households_platform.view.login
+package com.umc.one_person_households_platform.view.location
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.umc.one_person_households_platform.databinding.FragmentLoginFindPasswordBinding
+import com.umc.one_person_households_platform.databinding.FragmentLocationMapBinding
 
-class LoginFindPasswordFragment : Fragment() {
+class LocationMapFragment : Fragment() {
 
-    private var _binding: FragmentLoginFindPasswordBinding? = null
+    private var _binding: FragmentLocationMapBinding? = null
     private val binding get() = _binding!!
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoginFindPasswordBinding.inflate(inflater, container, false)
+        _binding = FragmentLocationMapBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -42,3 +39,5 @@ class LoginFindPasswordFragment : Fragment() {
         parentFragmentManager.popBackStack()
     }
 }
+
+

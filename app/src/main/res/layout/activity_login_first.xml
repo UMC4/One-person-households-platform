@@ -75,8 +75,10 @@
             android:layout_height="40dp"
             android:layout_marginTop="53dp"
             android:background="@drawable/bg_login_edittext"
-            android:gravity="center_horizontal|top"
+            android:gravity="center"
             android:text="로그인"
+            android:clickable="true"
+            android:focusable="true"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
@@ -90,6 +92,8 @@
             android:layout_marginLeft="69dp"
             android:layout_marginTop="24dp"
             android:text="회원가입"
+            android:clickable="true"
+            android:focusable="true"
             android:textAppearance="@style/login2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -115,6 +119,8 @@
             android:layout_marginLeft="133dp"
             android:layout_marginTop="24dp"
             android:text="아이디 찾기"
+            android:clickable="true"
+            android:focusable="true"
             android:textAppearance="@style/login2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -140,6 +146,8 @@
             android:layout_marginLeft="212dp"
             android:layout_marginTop="24dp"
             android:text="비밀번호 찾기"
+            android:clickable="true"
+            android:focusable="true"
             android:textAppearance="@style/login2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -157,6 +165,36 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editText3" />
+
+        <TextView
+            android:id="@+id/tv_noreply"
+            android:layout_width="322dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_login_black"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:textSize="13sp"
+            android:text="로그인 정보를 입력해주세요."
+            android:visibility="gone"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/editText3"
+            app:layout_constraintTop_toBottomOf="@id/findpassword"/>
+
+        <TextView
+            android:id="@+id/tv_incorrect"
+            android:layout_width="322dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_login_black"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:textSize="13sp"
+            android:text="아이디 또는 비밀번호가 틀립니다."
+            android:visibility="gone"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/editText3"
+            app:layout_constraintTop_toBottomOf="@id/findpassword"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
